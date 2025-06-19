@@ -1,0 +1,57 @@
+body{
+    background-color: #efefef;
+}
+
+main{
+    background-color: white;
+}
+
+header{
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    color: black;
+}
+
+h4{
+    color: gray;
+    opacity: 82%;
+}
+
+.headerHr{
+    border: solid 2px;
+    color: #dddddd;
+    opacity: 80%;
+}
+
+.mainHr{
+    margin-top: 0px;
+    border: solid 6px;
+    color: black;
+    opacity: 100%;
+}
+
+footer{
+     background-color: #e3e3e3;
+}
+
+
+@media (min-width: 768px) {
+.startText{
+    text-align: start;
+}
+
+.endText{
+    text-align: end;
+}
+
+.centerText{
+    text-align: center;
+}
+
+}
