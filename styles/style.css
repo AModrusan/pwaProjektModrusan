@@ -1,5 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Kings&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.kings-header {
+    font-family: "Kings", cursive;
+    font-size: 70px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kings-footer{
+    font-family: "Kings", cursive;
+    font-size: 60px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.noto-regular{
+    font-family:"Noto Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body{
     background-color: #efefef;
+    font-family:"Noto Sans", sans-serif;
 }
 
 main{
@@ -12,6 +35,9 @@ header{
 
 a{
     text-decoration: none;
+    color: black;
+    font-family: "Noto Sans",sans-serif;
+    font-weight: 700;
 }
 
 h1{
@@ -40,6 +66,49 @@ footer{
      background-color: #e3e3e3;
 }
 
+span{
+    float: left;
+    font-size: 3.5em;
+    line-height: 1;
+    font-weight: bold;
+    margin-right: 0.1em;
+    margin-top: 0.05em;
+}
+
+.vijestText{
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 2rem auto;
+}
+
+.imgCropper
+{
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+
+.imgCropper img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.startText{
+    text-align: center;
+}
+
+.endText{
+    text-align: center;
+}
+
+.centerText{
+    text-align: center;
+}
+
+
 
 @media (min-width: 768px) {
 .startText{
@@ -48,10 +117,6 @@ footer{
 
 .endText{
     text-align: end;
-}
-
-.centerText{
-    text-align: center;
 }
 
 }
