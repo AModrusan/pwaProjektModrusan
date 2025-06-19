@@ -108,7 +108,27 @@ span{
     text-align: center;
 }
 
+.adminRow{
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
 
+.btn-admin{
+    margin-bottom: 200px;
+    margin-top: 20px;
+    background-color: #73592a;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-admin:hover{
+    background-color: #5a3f1f;
+    color: burlywood;
+}
 
 @media (min-width: 768px) {
 .startText{

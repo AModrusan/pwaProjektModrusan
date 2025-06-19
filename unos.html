@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Antonijo Modrusan">
     <meta name="keywords"  content="sport, politics, news, german, Frankfurt, article">
-    <title>Frankfurter allegmeine</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -44,13 +44,53 @@
 
   <main class="container">
 
-    <form action="" method="post">
+    <form action="skripta.php" method="post" enctype="multipart/form-data">
 
-        <input type="text" value="Naslov">
-        <input type="text" value="podnaslov">
-        <input type="file" name="" id="">
-        <input type="text" name="" id="" value="uvod">
-        <input type="text" name="" id="" value="tekst">
+        <div class="row adminRow">
+            <label for="" class="col-sm-3 text-end">Naslov:</label>
+            <input type="text" name="naslov" class="col-sm-6">
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row adminRow">
+            <label for="" class="col-sm-3 text-end">Podnaslov:</label>
+            <input type="text" class="col-sm-6" name="podnaslov">
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row adminRow">
+            <label for="" class="col-sm-3 text-end">Odaberite datoteku:</label>
+            <input type="file" name="datoteka" class="col-sm-6" id="">
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row adminRow">
+            <label for="" class="col-sm-3 text-end">Uvod:</label>
+            <textarea name="uvod" class="col-sm-6" id="" rows="3"></textarea>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row adminRow">
+            <label for="" class="col-sm-3 text-end">Tekst:</label>
+            <textarea name="tekst" class="col-sm-6" id="" rows="5"></textarea>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row adminRow">
+            <div class="col-sm-3"></div>
+            <label for="zanr" class="col-sm-1 text-end">Žanr:</label>
+            <select name="zanr" id="zanr" class="col-sm-4">
+                <option value="sport">Sport</option>
+                <option value="politika">Politika</option>
+            </select>
+            <div class="col-sm-4"></div>
+        </div>
+
+        <div class="row adminRow">
+            <div class="col-sm-5"></div>
+            <input type="submit" value="Objavi" class="btn-admin col-sm-2 text-center">
+            <div class="col-sm-5"></div>
+        </div>
 
     </form>
 
