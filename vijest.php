@@ -28,7 +28,7 @@
           $stmt->execute();
           $stmt->bind_result($promjene, $uvod, $image, $tekst, $zanr);
           if ($stmt->fetch()) {
-              $aktualizirano = date("d.m.Y H:i", strtotime($promjene));
+              $aktualizirano = date("d.m.Y", strtotime($promjene));
           }
       }
     ?>
