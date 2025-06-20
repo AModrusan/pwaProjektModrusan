@@ -33,11 +33,15 @@ header{
     background-color: white;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
-    font-family: "Noto Sans",sans-serif;
     font-weight: 700;
+}
+
+a:hover {
+    color: rgb(115, 36, 5);
+    outline-offset: 2px;
 }
 
 h1{
@@ -45,8 +49,22 @@ h1{
 }
 
 h4{
+    margin-top: 10px;
     color: gray;
     opacity: 82%;
+    font-size: 12px;
+}
+
+h5{
+    font-size: 18px;
+
+}
+
+p
+{
+    font-size: 18px;
+    line-height: 1;
+    color: black;
 }
 
 .headerHr{
@@ -68,11 +86,9 @@ footer{
 
 span{
     float: left;
-    font-size: 3.5em;
+    font-size: 54px !important;
     line-height: 1;
     font-weight: bold;
-    margin-right: 0.1em;
-    margin-top: 0.05em;
 }
 
 .vijestText{
