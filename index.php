@@ -19,18 +19,22 @@
     $username = 'root';
     $password = '';
     $database = 'frankfurter';
+    $naslovPolitika = '';
+    $naslovSport = '';
     $conn = new mysqli($host, $username, $password, $database);
     if ($conn->connect_error) {
         die("Neuspješna konekcija: " . $conn->connect_error);
     }
     $sql = "SELECT naslov FROM clanci WHERE zanr LIKE 2 ORDER BY promjene DESC LIMIT 1";
     $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $naslovPolitika = $row['naslov'];
+    if ($row = $result->fetch_assoc()){
+      $naslovPolitika = $row['naslov'];
+    }
     $sql = "SELECT naslov FROM clanci WHERE zanr LIKE 1 ORDER BY promjene DESC LIMIT 1";
     $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $naslovSport = $row['naslov'];
+    if($row = $result->fetch_assoc()){
+      $naslovSport = $row['naslov'];
+    }
     $conn->close();
   ?>
 
@@ -45,7 +49,7 @@
           <a href="vijest.php?naslov=<?= htmlspecialchars($naslovSport) ?>">SPORT</a>
       </div>
       <div class="col-sm-3 endText">
-          <a href="unos.php">ADMINISTRACIJA</a>
+          <a href="registracija.php">ADMINISTRACIJA</a>
       </div>
     </nav>
 
@@ -85,12 +89,12 @@
         $result = $conn->query($sql);
         for ($i = 0; $i < 3; $i++) {
             if ($row = $result->fetch_assoc()) {
-                echo '<div class="col-sm-3">';
+                echo ' <div class="col-sm-3">';
                 echo ' <div class="imgCropper">';
-                echo '   <img src="'.$row['image'].'" alt="">';
+                echo ' <img src="'.$row['image'].'" alt="">';
                 echo ' </div>';
                 echo ' <h4>'.$row['podnaslov'].'</h4>';
-                echo ' <a href="vijest.php?naslov='.$row['naslov'].'">'.$row['naslov'].'</a>';
+                echo ' <a href="vijest.php?naslov='.htmlspecialchars($row['naslov']).'">'.$row['naslov'].'</a>';
                 echo ' <p class="noto-regular">'.$row['uvod'].'</p>';
                 echo '</div>';
             }
@@ -128,7 +132,7 @@
                 echo '   <img src="'.$row['image'].'" alt="">';
                 echo ' </div>';
                 echo ' <h4>'.$row['podnaslov'].'</h4>';
-                echo ' <a href="vijest.php?naslov='.$row['naslov'].'">'.$row['naslov'].'</a>';
+                echo ' <a href="vijest.php?naslov='.htmlspecialchars($row['naslov']).'">'.$row['naslov'].'</a>';
                 echo ' <p class="noto-regular">'.$row['uvod'].'</p>';
                 echo '</div>';
             }

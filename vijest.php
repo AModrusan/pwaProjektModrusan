@@ -18,6 +18,7 @@
           $username = 'root';
           $password = '';
           $database = 'frankfurter';
+          $aktualizirano = '';
           
           $conn = new mysqli($host, $username, $password, $database);
           if ($conn->connect_error) {
@@ -38,18 +39,22 @@
       $username = 'root';
       $password = '';
       $database = 'frankfurter';
+      $naslovPolitika = '';
+      $naslovSport = '';
       $conn = new mysqli($host, $username, $password, $database);
       if ($conn->connect_error) {
         die("Neuspješna konekcija: " . $conn->connect_error);
       }
       $sql = "SELECT naslov FROM clanci WHERE zanr LIKE 2 ORDER BY promjene DESC LIMIT 1";
       $result = $conn->query($sql);
-      $row = $result->fetch_assoc();
-      $naslovPolitika = $row['naslov'];
+      if($row = $result->fetch_assoc()){
+        $naslovPolitika = $row['naslov'];
+      }
       $sql = "SELECT naslov FROM clanci WHERE zanr LIKE 1 ORDER BY promjene DESC LIMIT 1";
       $result = $conn->query($sql);
-      $row = $result->fetch_assoc();
-      $naslovSport = $row['naslov'];
+      if($row = $result->fetch_assoc()){
+        $naslovSport = $row['naslov'];
+      }
       $conn->close();
     ?>
 
@@ -66,7 +71,7 @@
         <a href="vijest.php?naslov=<?= htmlspecialchars($naslovSport) ?>" style="<?php if ($zanr == '1') echo 'text-decoration: underline;'; ?>">SPORT</a>
       </div>
       <div class="col-sm-3 endText">
-        <a href="unos.php">ADMINISTRACIJA</a>
+        <a href="registracija.php">ADMINISTRACIJA</a>
       </div>
     </nav>
 
@@ -91,7 +96,11 @@
       <div class="col-sm-2"></div>
 
       <div class="col-sm-2"></div>
-      <h4 class="col-sm-8">"<?= "Aktualizirano " . $aktualizirano ?>"</h4>
+      <h4 class="col-sm-8"><?php if($aktualizirano!='')
+      {
+        "Aktualizirano " . $aktualizirano ;
+      }
+       ?></h4>
       <div class="col-sm-2"></div>
 
     </div>
@@ -137,7 +146,3 @@
 </body>
 
 </html>
-
-<!--
-
--->
